@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /etc/nginx/sites-enabled && rm default
+cd /etc/nginx/sites-enabled && rm -f default
 
 cd /etc/nginx/sites-available && cat << EOF > ghost
 server {
@@ -20,7 +20,5 @@ server {
 EOF
 
 cd /etc/nginx/sites-enabled && ln -sf ../sites-available/ghost ghost
-
-/etc/init.d/nginx reload
 
 sed -i "s,^/usr/local/bin/init.sh,#/usr/local/bin/init.sh," /usr/local/bin/run.sh
