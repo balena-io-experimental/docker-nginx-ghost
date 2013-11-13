@@ -2,4 +2,6 @@
 
 /usr/local/bin/init.sh
 
-cd /ghost && npm start &
+/etc/init.d/nginx restart
+
+cd /ghost && npm start
