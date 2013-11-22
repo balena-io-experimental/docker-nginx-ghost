@@ -11,6 +11,7 @@ RUN apt-get install -y wget nginx nginx-light zip unzip nodejs
 RUN wget -q --no-check-certificate https://ghost.org/zip/ghost-0.3.3.zip -O /tmp/ghost.zip
 RUN unzip -ou /tmp/ghost.zip -d /ghost
 
+VOLUME ["/ghost"]
 EXPOSE 80
 
 ADD run.sh /usr/local/bin/run
